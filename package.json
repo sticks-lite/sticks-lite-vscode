@@ -1,0 +1,63 @@
+{
+  "name": "sticks-lite-vscode",
+  "displayName": "Sticks Lite",
+  "description": "Syntax highlighting and editor support for the Sticks Lite programming language.",
+  "version": "0.0.1",
+  "publisher": "brisqdev",
+  "license": "MIT",
+  "author": "brisqdev",
+  "homepage": "https://github.com/sticks-lite/sticks-lite-vscode#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sticks-lite/sticks-lite-vscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sticks-lite/sticks-lite-vscode/issues"
+  },
+  "icon": "resources/sticks-lite-logo.png",
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "sticks-lite",
+    "sticks",
+    "slite",
+    "language",
+    "education",
+    "classroom"
+  ],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "sticks-lite",
+        "aliases": [
+          "Sticks Lite",
+          "Sticks",
+          "sticks-lite",
+          "slite"
+        ],
+        "extensions": [
+          ".slite"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "sticks-lite",
+        "scopeName": "source.sticks-lite",
+        "path": "./syntaxes/sticks-lite.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "check": "node scripts/validate-extension.mjs",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.6.3"
+  }
+}

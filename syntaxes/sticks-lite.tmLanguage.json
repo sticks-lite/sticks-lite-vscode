@@ -1,0 +1,240 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Sticks Lite",
+  "scopeName": "source.sticks-lite",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#function-declarations" },
+    { "include": "#constant-declarations" },
+    { "include": "#say-command" },
+    { "include": "#ask-expression" },
+    { "include": "#builtins" },
+    { "include": "#error-names" },
+    { "include": "#literals" },
+    { "include": "#keywords" },
+    { "include": "#function-calls" },
+    { "include": "#numbers" },
+    { "include": "#operators" },
+    { "include": "#punctuation" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.sticks-lite",
+          "match": "#.*$"
+        },
+        {
+          "name": "comment.block.sticks-lite",
+          "begin": "/\\*",
+          "beginCaptures": {
+            "0": { "name": "punctuation.definition.comment.begin.sticks-lite" }
+          },
+          "end": "\\*/",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.comment.end.sticks-lite" }
+          }
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.sticks-lite",
+          "begin": "\"",
+          "beginCaptures": {
+            "0": { "name": "punctuation.definition.string.begin.sticks-lite" }
+          },
+          "end": "\"",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.string.end.sticks-lite" }
+          },
+          "patterns": [
+            {
+              "name": "constant.character.escape.sticks-lite",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.sticks-lite",
+          "begin": "'",
+          "beginCaptures": {
+            "0": { "name": "punctuation.definition.string.begin.sticks-lite" }
+          },
+          "end": "'",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.string.end.sticks-lite" }
+          },
+          "patterns": [
+            {
+              "name": "constant.character.escape.sticks-lite",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "function-declarations": {
+      "patterns": [
+        {
+          "name": "meta.function.definition.sticks-lite",
+          "match": "^\\s*(new)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+          "captures": {
+            "1": { "name": "storage.type.function.sticks-lite" },
+            "2": { "name": "entity.name.function.sticks-lite" }
+          }
+        }
+      ]
+    },
+    "constant-declarations": {
+      "patterns": [
+        {
+          "name": "meta.constant.definition.sticks-lite",
+          "match": "^\\s*(DEFINE)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+          "captures": {
+            "1": { "name": "storage.modifier.constant.sticks-lite" },
+            "2": { "name": "variable.other.constant.sticks-lite" }
+          }
+        }
+      ]
+    },
+    "say-command": {
+      "patterns": [
+        {
+          "name": "keyword.other.command.say.sticks-lite",
+          "match": "\\b(say)\\b"
+        }
+      ]
+    },
+    "ask-expression": {
+      "patterns": [
+        {
+          "name": "keyword.other.command.ask.sticks-lite",
+          "match": "\\b(ask)\\b"
+        }
+      ]
+    },
+    "builtins": {
+      "patterns": [
+        {
+          "name": "support.function.builtin.sticks-lite",
+          "match": "\\b(random|length|toNumber|toText|isNumber|isText|isList|isTuple|isDictionary|isBoolean|isNull|push|insert|remove|round|floor|ceiling|absolute)\\b"
+        }
+      ]
+    },
+    "error-names": {
+      "patterns": [
+        {
+          "name": "support.type.error.sticks-lite",
+          "match": "\\b(SyntaxError|IndentationError|NameError|TypeError|ValueError|MathError|ConstantError|IndexError|KeyError|FunctionError|ArgumentError|RuntimeError)\\b"
+        }
+      ]
+    },
+    "literals": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.sticks-lite",
+          "match": "\\b(True|False)\\b"
+        },
+        {
+          "name": "constant.language.null.sticks-lite",
+          "match": "\\b(null)\\b"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.conditional.sticks-lite",
+          "match": "\\b(if|orif|otherwise)\\b"
+        },
+        {
+          "name": "keyword.control.loop.sticks-lite",
+          "match": "\\b(repeat|times|loopif|foreach|in|break|continue)\\b"
+        },
+        {
+          "name": "keyword.control.exception.sticks-lite",
+          "match": "\\b(attempt|when|error)\\b"
+        },
+        {
+          "name": "keyword.control.flow.return.sticks-lite",
+          "match": "\\b(return)\\b"
+        },
+        {
+          "name": "keyword.operator.logical.sticks-lite",
+          "match": "\\b(and|or|not)\\b"
+        },
+        {
+          "name": "keyword.operator.arithmetic.sticks-lite",
+          "match": "\\b(div)\\b"
+        }
+      ]
+    },
+    "function-calls": {
+      "patterns": [
+        {
+          "name": "entity.name.function.call.sticks-lite",
+          "match": "\\b([A-Za-z_][A-Za-z0-9_]*)\\s*(?=\\()"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.sticks-lite",
+          "match": "\\b\\d+(\\.\\d+)?\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.assignment.compound.sticks-lite",
+          "match": "(\\+=|-=|\\*=|/=|%=)"
+        },
+        {
+          "name": "keyword.operator.increment-decrement.sticks-lite",
+          "match": "(\\+\\+|--)"
+        },
+        {
+          "name": "keyword.operator.comparison.sticks-lite",
+          "match": "(==|!=|<=|>=|<|>)"
+        },
+        {
+          "name": "keyword.operator.assignment.sticks-lite",
+          "match": "="
+        },
+        {
+          "name": "keyword.operator.arithmetic.sticks-lite",
+          "match": "[+\\-*/%]"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.separator.comma.sticks-lite",
+          "match": ","
+        },
+        {
+          "name": "punctuation.separator.key-value.sticks-lite",
+          "match": ":"
+        },
+        {
+          "name": "punctuation.section.parens.sticks-lite",
+          "match": "[()]"
+        },
+        {
+          "name": "punctuation.section.brackets.sticks-lite",
+          "match": "[\\[\\]]"
+        },
+        {
+          "name": "punctuation.section.braces.sticks-lite",
+          "match": "[{}]"
+        }
+      ]
+    }
+  }
+}

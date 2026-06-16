@@ -1,0 +1,10 @@
+.git/**
+.gitignore
+.vscode/**
+node_modules/**
+scripts/**
+examples/**
+*.vsix
+package-lock.json
+npm-debug.log*
+.DS_Store

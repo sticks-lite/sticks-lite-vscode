@@ -1,0 +1,31 @@
+# Sticks Lite syntax fixture
+DEFINE MAX_SCORE = 100
+
+name = ask "Student name?"
+scores = [87, 93, 78]
+total = 0
+
+foreach score in scores:
+    total += score
+
+average = total / length(scores)
+
+if average >= 90:
+    say name + " earned an A"
+orif average >= 80:
+    say name + " earned a B"
+otherwise:
+    say name + " should keep practicing"
+
+attempt:
+    number = toNumber("42")
+    say toText(number div 5)
+when ValueError:
+    say "That was not a number"
+when error:
+    say "Something else happened"
+
+new double(value):
+    return value * 2
+
+say toText(double(MAX_SCORE))

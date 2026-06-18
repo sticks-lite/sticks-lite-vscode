@@ -4,6 +4,12 @@ Official VS Code editor support for Sticks Lite.
 
 Sticks Lite is intended for monitored educational environments and introductory computer-science teaching.
 
+## Who this is for
+
+- Teachers and mentors introducing programming in a supervised classroom.
+- Students writing `.slite` source files while learning beginner programming concepts.
+- Clubs, camps, and classroom setups that want Sticks Lite syntax highlighting in VS Code.
+
 ## Features
 
 - Recognizes `.slite` files as Sticks Lite.
@@ -72,12 +78,13 @@ say toText(double(MAX_SCORE))
 
 ## Relationship To Sticks Lite
 
-This extension provides editor recognition and syntax highlighting only. It does not include a language server, diagnostics, formatter, or compiler.
+This extension provides editor recognition and syntax highlighting only. It does not include a language server, diagnostics, formatter, interpreter, or `sticks` CLI.
 
-Install the Sticks Lite compiler/interpreter separately:
+Install the Sticks Lite interpreter and `sticks` CLI separately:
 
 ```sh
 npm install -g sticks-lite
+sticks --version
 sticks main.slite
 ```
 

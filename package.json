@@ -55,6 +55,7 @@
   },
   "scripts": {
     "check": "node scripts/validate-extension.mjs",
+    "release:check": "npm run check",
     "package": "vsce package"
   },
   "devDependencies": {

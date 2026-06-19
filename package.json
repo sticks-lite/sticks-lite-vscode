@@ -2,7 +2,7 @@
   "name": "sticks-lite-vscode",
   "displayName": "Sticks Lite",
   "description": "Syntax highlighting and editor support for the Sticks Lite programming language.",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "publisher": "brisqdev",
   "license": "MIT",
   "author": "brisqdev",

@@ -35,7 +35,7 @@ npm run package
 Install the generated `.vsix` from VS Code:
 
 ```sh
-code --install-extension sticks-lite-vscode-0.0.1.vsix
+code --install-extension sticks-lite-vscode-<version>.vsix
 ```
 
 ## Develop
@@ -85,7 +85,7 @@ Install the Sticks Lite interpreter and `sticks` CLI separately:
 ```sh
 npm install -g sticks-lite
 sticks --version
-sticks main.slite
+sticks run main.slite
 ```
 
 ## License
